@@ -1,0 +1,8 @@
+1. git init - initiating a local repository
+3. git config --global user.name 'Olga Makarova'
+4. git config --global user.email 'olga.alex.makar@gmail.com'
+5. git add test.sh - adding a file test.sh to our local repository
+6. git status - to see what is in the staging area
+7. git rm --cached test.sh - to remove the file from the staged area
+8. git add .   - to add everything to the staging area
+9. 
