@@ -14,4 +14,12 @@ want to ever be added to the git repository
 14. we can make changes in a file and commit them in this branch and they will
 not reflect in the same file in the master branch. 
 15.When in the master branch:  git merge login - this command will merge our
-changes in the other branch with the master branch  
+changes in the other branch with the master branch.
+16. Now we can go to github and create a repository. I named mine
+Calculator_bash. No need to add a README file, as we already have .gitignore.
+17. git remote - will list a remote repositor. In my case I have not added a
+remote repository yet, so this command will display none.
+18. git remote add origin https://github.com/Olala1389/Calculator_bash.git -
+this will add the remote repository.
+19. git push -u origin master - this will add our local repository files to the
+remote origin repository.
