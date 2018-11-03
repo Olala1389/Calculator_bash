@@ -9,4 +9,6 @@
 10. git commit -m 'comment' - to add a comment about our commit
 11. touch .gitignore - to create a file where I will name those files that I don't
 want to ever be added to the git repository
-12. 
+12. git branch MYBRANCH - to create an additional, non-master branch
+13. git checkout MYBRANCH - so now we are in the MYBRANCH branch
+
