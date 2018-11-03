@@ -23,3 +23,6 @@ remote repository yet, so this command will display none.
 this will add the remote repository.
 19. git push -u origin master - this will add our local repository files to the
 remote origin repository.
+20. Now we can make changes in local repository (don't forget to add and commit
+these changes in the local repository) and push them to the remote repository
+just by command: git push
