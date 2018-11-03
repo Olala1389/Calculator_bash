@@ -26,3 +26,7 @@ remote origin repository.
 20. Now we can make changes in local repository (don't forget to add and commit
 these changes in the local repository) and push them to the remote repository
 just by command: git push
+21. You can clone a remote repository into a different folder on your computer
+by git clone repository_link
+22. You can use "git pull" command if several people commit to the remote
+repository and you want to pull the latest commits from the remote repo. 
