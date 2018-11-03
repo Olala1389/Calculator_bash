@@ -7,4 +7,6 @@
 8. git add .   - to add everything to the staging area
 9. git commit   - adds a commit to a local repository
 10. git commit -m 'comment' - to add a comment about our commit
-11. 
+11. touch .gitignore - to create a file where I will name those files that I don't
+want to ever be added to the git repository
+12. 
