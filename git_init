@@ -11,4 +11,7 @@
 want to ever be added to the git repository
 12. git branch MYBRANCH - to create an additional, non-master branch
 13. git checkout MYBRANCH - so now we are in the MYBRANCH branch
-
+14. we can make changes in a file and commit them in this branch and they will
+not reflect in the same file in the master branch. 
+15.When in the master branch:  git merge login - this command will merge our
+changes in the other branch with the master branch  
