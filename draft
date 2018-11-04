@@ -39,6 +39,9 @@ sleep $selected_speed && xterm -fg yellow -g 240x80 &
 let attempts=9
 let counter=0
 let wrong_attempts=0
+
+echo "Let's start!"
+
 while [ $counter -le  $attempts ]
 do
 #generation of two random numbers, A and B
@@ -52,22 +55,26 @@ read input
   then 
   echo "That is correct!"
   counter=$((counter+1))
-  else 
-  while [[ input -ne Z ]] 
-    do 
-    wrong_attempts=$((wrong_attempts+1))
-    echo -e "Wrong answer. Try harder!"
-    echo $A x $B = 
-    read input
-        if [[wrong_attempts -gt 4]]
-         then 
-         echo "Too many incorrect answers. 
-         Learn the damn multiplication table!"
-         fi
-    done
-  echo - "That is correct!"
-  counter=$((counter+1))
-  fi
-
+   
+  elif [[ input -ne Z ]] 
+  then
+             while [[ input -ne Z ]]
+             do
+             wrong_attempts=$((wrong_attempts+1))
+                 if [[ wrong_attempts -gt 4 ]]
+                    then
+                    echo "Too many incorrect answers. 
+                    Learn the damn multiplication table!"
+                    exit 0                    
+                 else
+                 echo -e "Wrong answer. Try harder!"
+                 echo $A x $B = 
+                 read input
+                 fi
+             done
+             wrong_attempts=0
+             echo That is correct!
+  fi 
+counter=$((counter+1))
 done
 echo "Next level!"
