@@ -12,6 +12,9 @@ function main(){
     sleep 1
     done
     echo -e "\nGAME OVER!!!"
+    play "$alarm" 2>/dev/null
+
     exit 0
     }
 main
+#timeout [OPTION] DURATION COMMAND [ARG]..

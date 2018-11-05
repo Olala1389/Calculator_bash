@@ -22,17 +22,24 @@
 #Add wrong speed option
 
 #Game introduction set to the variable setTitle
-
 setTitle() {
 echo -e Hello, this game checks your knowledge of the multiplication table.
 }
 setTitle -e
 
-read -p  "Please choose your speed in seconds. Options: 4, 7, 10: 
-" selected_speed
+echo -n "Please choose your speed in seconds. Options: 4, 7, 10: " 
+read speed
 
+s=1
 setStopwatch(){
-sleep $selected_speed && xterm -fg yellow -g 240x80 &
+while [[ s -gt 0 ]]
+do
+s="$((speed - (SECONDS - start)))"
+echo -e "seconds left: $s"
+sleep 0 
+done
+#trap 'echo "\nTOO SLOW. GAME OVER!!!"; exit' 0
+exit 1 
 }
 
 let attempts=9
@@ -40,19 +47,31 @@ let counter=0
 let wrong_attempts=0
 
 echo "Let's start!"
+start="$SECONDS"
 
-while [ $counter -le  $attempts ]
+while [[ $counter -le  $attempts ]] 
 do
+
 #generation of two random numbers, A and B
 A=$((RANDOM%11))
 B=$((RANDOM%11))
 Z=A*B
-echo $A x $B = 
+echo -e "$A x $B = "
+
 read input
 
+setStopwatch > time_output.txt 2>&1 &
+
+#if [[ "output=`tail -n 1 time_output.txt | cat`" -eq "TOO SLOW. GAME OVER!!!"
+# ]]
+#  then 
+#  exit 0
+#  fi
   if [[ input -eq Z ]]
   then 
-  echo "That is correct!"
+  echo -e "\rThat is correct!"
+  output=`tail -n 1 time_output.txt| cat`
+  echo -e "$output"
   counter=$((counter+1))
    
   elif [[ input -ne Z ]] 
@@ -67,12 +86,16 @@ read input
                     exit 0                    
                  else
                  echo -e "Wrong answer. Try harder!"
+                 output=`tail -n 1 time_output.txt| cat`
+                 echo -e "$output"
                  echo $A x $B = 
                  read input
                  fi
              done
              wrong_attempts=0
              echo That is correct!
+             output=`tail -n 1 time_output.txt| cat`
+             echo -e "$output"
   fi 
 counter=$((counter+1))
 done
