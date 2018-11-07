@@ -19,16 +19,41 @@
 #      REVISION:  ---
 #===============================================================================
 
-#Add wrong speed option
+set +bm
 
-#Game introduction set to the variable setTitle
 setTitle() {
 echo -e Hello, this game checks your knowledge of the multiplication table.
 }
 setTitle -e
 
-echo -n "Please choose your speed in seconds. Options: 4, 7, 10: " 
+setSpeed(){
+echo -n "Please choose your speed in seconds. Options: 20, 30, 40 "
 read speed
+
+case $speed in
+    20)
+    echo "Bolsy"
+    ;;
+    30)
+    echo "OK"
+    ;;
+    40)
+    echo Tartaruga!
+    ;;
+    *)
+    echo "Pay attention!"
+    ;;
+    esac
+}
+
+setSpeed
+
+until [[ $speed -eq 20 ]] || [[ $speed -eq 30 ]] || [[ $speed -eq 40 ]]
+do 
+setSpeed
+done
+
+
 
 s=1
 setStopwatch(){
@@ -38,9 +63,8 @@ s="$((speed - (SECONDS - start)))"
 echo -e "seconds left: $s"
 sleep 0 
 done
-#trap 'echo "\nTOO SLOW. GAME OVER!!!"; exit' 0
-trap "kill 0" EXIT
-exit 0 
+trap "kill 0 > /dev/null " EXIT
+exit 0
 }
 
 let attempts=9
@@ -63,11 +87,6 @@ read input
 
 setStopwatch > time_output.txt 2>&1 &
 
-#if [[ "output=`tail -n 1 time_output.txt | cat`" -eq "TOO SLOW. GAME OVER!!!"
-# ]]
-#  then 
-#  exit 0
-#  fi
   if [[ input -eq Z ]]
   then 
   echo -e "\rThat is correct!"
