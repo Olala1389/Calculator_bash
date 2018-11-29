@@ -1,0 +1,7 @@
+
+#what command shows network info. Ports and protocols. Interpreted language. Most popular ...interactive stripts with user input assign variable with which command. Sed and awk facts. Homework assignments wh#at processes are responsible for setting all processes (init). What are variables identified with (a $ sign). Bash scripts begin with what?
+
+#Function setTitle introduces the game.
+setTitle() {
+echo -e Hello, this game checks your knowledge of the multiplication table.
+}
