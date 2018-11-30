@@ -14,6 +14,7 @@
 #===============================================================================
 
 
+
 #Function setTitle introduces the game.
 setTitle() {
 echo -e Hello, this game checks your knowledge of the multiplication table.
@@ -51,7 +52,7 @@ setSpeed
 
 
 #Conditional until-loop. If the user's speed is not equal to the game conditions (20, 30 or 40) the function setSpeed will keep popping up, requesting the user to set the speed.  
-until [[ $speed -eq 20 ]] || [[ $speed -eq 30 ]] || [[ $speed -eq 40 ]]
+until [[ $speed -eq 5 ]] || [[ $speed -eq 30 ]] || [[ $speed -eq 40 ]]
 do 
 setSpeed
 done
