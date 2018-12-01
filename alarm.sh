@@ -1,1 +1,0 @@
-alarm="$HOME/.alarm.wav"
