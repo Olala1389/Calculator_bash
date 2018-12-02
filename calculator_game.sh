@@ -1,6 +1,6 @@
 #!/bin/bash
 #===============================================================================
-# 
+#  Program name:  calculator_game.sh
 #   DESCRIPTION:  This is a calculator game. 
 # 
 #  REQUIREMENTS:  Good memory
